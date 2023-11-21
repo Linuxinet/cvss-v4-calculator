@@ -20,6 +20,14 @@ const app = Vue.createApp({
         getEQMaxes(lookup, eq) {
             return maxComposed["eq" + eq][lookup[eq - 1]]
         },
+        processVectorInput() {
+            let vectorInput = document.getElementById('cvssVectorInput').value;
+            if (vectorInput) {
+                this.setButtonsToVector(vectorInput);
+            } else {
+                console.log("No vector input provided");
+            }
+        },
         extractValueMetric(metric, str) {
             // indexOf gives first index of the metric, we then need to go over its size
             extracted = str.slice(str.indexOf(metric) + metric.length + 1)

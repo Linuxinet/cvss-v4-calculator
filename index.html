@@ -45,6 +45,17 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <div id="app" class="container">
             <div id="header">
                 <h4 class="page-title">CVSS v4.0 calculator</h4>
+     <div id="vectorInput" class="form-group" style="max-width: 600px;">
+    <label for="cvssVectorInput" class="form-label h5">Enter CVSS Vector:</label>
+    <div class="input-group">
+        <input type="text" id="cvssVectorInput" class="form-input" placeholder="CVSS Vector (e.g., CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N)" style="flex-grow: 1;">
+        <button class="btn btn-primary input-group-btn" @click="processVectorInput">Submit</button>
+    </div>
+</div>
+
+                
+<br>
+
                 <mark class="tooltip c-hand" data-tooltip="Click vector to copy to clipboard" @click="copyVector">
                     {{ vector }}
                 </mark>
